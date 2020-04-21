@@ -8,17 +8,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 import psa.springframework.examplebeans.FakeDataSource;
+import psa.springframework.examplebeans.FakeOther;
 
 /**
  * Created by pyaesoneaung on 21/04/2020
  *
  */
 @Configuration
-@PropertySource({"classpath:datasource.properties"})
+@PropertySources({
+	@PropertySource({"classpath:datasource.properties"}),
+	@PropertySource({"classpath:other.properties"})
+})
 public class PropertyConfig {
 	
 	@Autowired
@@ -33,6 +38,16 @@ public class PropertyConfig {
 	@Value("${psa.dburl}")
 	String url;
 	
+	@Value("${ths.username}")
+	String otheruser;
+	
+	@Value("${ths.password}")
+	String otherpassword;
+	
+	@Value("${ths.dburl}")
+	String otherurl;
+	
+	
 	
 	@Bean
 	public FakeDataSource FakeDataSource() {
@@ -41,6 +56,15 @@ public class PropertyConfig {
 		fakeDataSource.setPassword(password);
 		fakeDataSource.setUrl(url);
 		return fakeDataSource;
+	}
+	
+	@Bean
+	public FakeOther FakeOther() {
+		FakeOther fakeOther = new FakeOther();
+		fakeOther.setUser(otheruser);
+		fakeOther.setPassword(otherpassword);
+		fakeOther.setUrl(otherurl);
+		return fakeOther;
 	}
 
 

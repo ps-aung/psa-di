@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import psa.springframework.examplebeans.FakeDataSource;
+import psa.springframework.examplebeans.FakeOther;
 import psa.springframework.psadi.controllers.ConstructorInjectedController;
 import psa.springframework.psadi.controllers.I18nController;
 import psa.springframework.psadi.controllers.MyController;
@@ -50,6 +51,10 @@ public class PsaDiApplication {
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		
 		System.out.println(fakeDataSource);
+		
+		FakeOther fakeOther = ctx.getBean(FakeOther.class);
+		
+		System.out.println(fakeOther);
 	}
 
 }
