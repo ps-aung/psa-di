@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import psa.springframework.examplebeans.FakeDataSource;
 import psa.springframework.psadi.controllers.ConstructorInjectedController;
 import psa.springframework.psadi.controllers.I18nController;
 import psa.springframework.psadi.controllers.MyController;
@@ -45,6 +46,10 @@ public class PsaDiApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		
 		System.out.println(constructorInjectedController.getGreeting());
+		
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		
+		System.out.println(fakeDataSource);
 	}
 
 }
