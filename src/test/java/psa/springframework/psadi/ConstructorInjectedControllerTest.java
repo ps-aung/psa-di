@@ -3,13 +3,13 @@
  */
 package psa.springframework.psadi;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import psa.springframework.psadi.controllers.ConstructorInjectedController;
-import psa.springframework.psadi.services.ConstructorGreetingService;
+import psa.springframework.services.ConstructorGreetingService;
 
 /**
  * Created by pyaesoneaung on 13/04/2020

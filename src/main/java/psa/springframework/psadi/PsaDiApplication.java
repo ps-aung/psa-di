@@ -3,6 +3,7 @@ package psa.springframework.psadi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import psa.springframework.psadi.controllers.ConstructorInjectedController;
 import psa.springframework.psadi.controllers.I18nController;
@@ -11,6 +12,7 @@ import psa.springframework.psadi.controllers.PropertyInjectedController;
 import psa.springframework.psadi.controllers.SetterInjectedController;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"psa.springframework.services","psa.springframework"})
 public class PsaDiApplication {
 
 	public static void main(String[] args) {

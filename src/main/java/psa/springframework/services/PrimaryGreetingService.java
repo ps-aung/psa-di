@@ -1,7 +1,7 @@
 /**
  * 
  */
-package psa.springframework.psadi.services;
+package psa.springframework.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

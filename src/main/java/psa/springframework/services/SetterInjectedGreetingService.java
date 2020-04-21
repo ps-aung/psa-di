@@ -1,7 +1,7 @@
 /**
  * 
  */
-package psa.springframework.psadi.services;
+package psa.springframework.services;
 
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class PropertyInjectedGreetingService implements GreetingService{
+public class SetterInjectedGreetingService implements GreetingService {
 
 	@Override
 	public String sayGreeting() {
 		// TODO Auto-generated method stub
-		return "Hello World - Property";
+		return "Hello World - Setter";
 	}
 
 }
